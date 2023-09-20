@@ -10,6 +10,7 @@ import '../assets/css/dash.css'
 const Dash = () => {
     const [current, setCurrent] = useState(0)
     const [fileList, setFileList] = useState([])
+    const [photoInfo, setPhotoInfo] = useState({})
     const next = () => {
         setCurrent(current + 1)
     }
@@ -48,11 +49,11 @@ const Dash = () => {
                     />
                     :
                     current === 1 ?
-                        <PhotoSize next={next}/>
+                        <PhotoSize next={next} onPhotoInfo={setPhotoInfo}/>
                         :
                         current === 2
                             ?
-                            <CroppingImage fileList={fileList} prev={Previous}/> : current === 3
+                            <CroppingImage fileList={fileList} prev={Previous} info={photoInfo}/> : current === 3
                                 ?
                                 <SelectImage/> : null
             }
@@ -81,14 +82,20 @@ const SelectImage = ({fileList, setFileList, next}) => {
 }
 
 // 选择图像尺寸
-const PhotoSize = ({next}) => {
+const PhotoSize = ({next, onPhotoInfo}) => {
     let typeList = {
         '普通证件照': [
             {
                 type: '一寸证件照',
                 width: 25,
                 height: 35,
-                proportion: 3 / 4
+                proportion: 5 / 7
+            },
+            {
+                type: '二寸证件照',
+                width: 35,
+                height: 53,
+                proportion: 1
             }
         ]
     }
@@ -106,6 +113,7 @@ const PhotoSize = ({next}) => {
                                         className={'rounded-md mx-auto hover:shadow-md w-44 pl-3 pr-3 pt-2 pb-2 cursor-pointer font-bold font-sans flex justify-center'}
                                         style={{border: '1px solid #ccc'}}
                                         onClick={() => {
+                                            onPhotoInfo(item)
                                             next()
                                         }}
                                     >
@@ -125,9 +133,10 @@ const PhotoSize = ({next}) => {
     )
 }
 // 裁剪图像
-const CroppingImage = ({fileList, prev}) => {
+const CroppingImage = ({fileList, prev, info}) => {
     const [image, setImage] = useState('')
     useEffect(() => {
+        console.log(info)
         const reader = new FileReader();
         reader.onload = () => {
             setImage(reader.result.toString());
@@ -137,7 +146,7 @@ const CroppingImage = ({fileList, prev}) => {
     return (
         <div>
             <Cropper
-                initialAspectRatio={0.75}
+                aspectRatio={info.proportion}
                 className={'w-full h-72'}
                 src={image}
                 viewMode={1}
