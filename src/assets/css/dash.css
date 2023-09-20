@@ -1,0 +1,8 @@
+.dash-box {
+    height: calc(100% - 55px);
+}
+
+.ant-upload-select{
+    display: flex !important;
+    justify-content: center !important;
+}
