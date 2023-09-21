@@ -14,6 +14,7 @@
     "@lottiefiles/react-lottie-player": "^3.5.3",
     "@tauri-apps/api": "^1.4.0",
     "antd": "^5.9.2",
+    "changedpi": "^1.0.4",
     "react": "^18.2.0",
     "react-cropper": "^2.3.3",
     "react-dom": "^18.2.0",

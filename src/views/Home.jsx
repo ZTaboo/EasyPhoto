@@ -1,10 +1,10 @@
-import {Layout, Menu, Button, theme} from 'antd';
-import {startTransition, useEffect, useState} from "react";
+import {Layout, Menu, Button, theme, message} from 'antd';
+import {useEffect, useState} from "react";
 import {
     MenuFoldOutlined,
     MenuUnfoldOutlined,
-    UploadOutlined,
     UserOutlined,
+    MoreOutlined,
     VideoCameraOutlined,
 } from '@ant-design/icons'
 import {Outlet, useLocation, useNavigate} from "react-router-dom";
@@ -12,6 +12,7 @@ import {Outlet, useLocation, useNavigate} from "react-router-dom";
 const {Header, Sider, Content} = Layout;
 const Home = () => {
     const [collapsed, setCollapsed] = useState(false);
+    const [messageApi, contextHolder] = message.useMessage();
     const {
         token: {colorBgContainer},
     } = theme.useToken();
@@ -28,19 +29,29 @@ const Home = () => {
             icon: <UserOutlined/>,
             label: '证件照制作',
         },
+        // {
+        //     key: 'matting',
+        //     icon: <VideoCameraOutlined/>,
+        //     label: '人像抠图',
+        // },
         {
-            key: 'matting',
-            icon: <VideoCameraOutlined/>,
-            label: '人像抠图',
+            key: 'more',
+            icon: <MoreOutlined/>,
+            label: '更多',
         },
     ]
     return (
         <Layout style={{height: '100%'}}>
+            {contextHolder}
             <Sider trigger={null} collapsible collapsed={collapsed} theme={'light'}>
                 <Menu
                     mode="inline"
                     onClick={(item) => {
-                        router(item.key)
+                        if (item.key === 'more') {
+                            messageApi.info('更多功能正在开发中...')
+                        } else {
+                            router(item.key)
+                        }
                     }}
                     defaultSelectedKeys={['dash']}
                     items={menus}

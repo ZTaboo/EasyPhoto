@@ -7,7 +7,7 @@
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "easy_photo",
+    "productName": "EasyPhoto",
     "version": "0.0.0"
   },
   "tauri": {
@@ -16,6 +16,14 @@
       "shell": {
         "all": false,
         "open": true
+      },
+      "dialog": {
+        "all": false,
+        "save": true
+      },
+      "fs": {
+        "all": false,
+        "writeFile": true
       }
     },
     "bundle": {
@@ -37,9 +45,11 @@
       {
         "fullscreen": false,
         "resizable": true,
-        "title": "easy_photo",
-        "width": 1055,
-        "height": 610
+        "title": "EasyPhoto",
+        "width": 1200,
+        "height": 660,
+        "minWidth": 1200,
+        "minHeight": 660
       }
     ]
   }
