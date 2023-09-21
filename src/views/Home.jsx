@@ -11,7 +11,7 @@ import {Outlet, useLocation, useNavigate} from "react-router-dom";
 
 const {Header, Sider, Content} = Layout;
 const Home = () => {
-    const [collapsed, setCollapsed] = useState(false);
+    const [collapsed, setCollapsed] = useState(true);
     const [messageApi, contextHolder] = message.useMessage();
     const {
         token: {colorBgContainer},
