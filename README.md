@@ -1,7 +1,10 @@
-# Tauri + React
+# EasyPhoto
 
-This template should help get you started developing with Tauri and React in Vite.
+> 轻松制作证件照
 
-## Recommended IDE Setup
+## 预览
 
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+![img.png](doc/1.png)
+![img.png](doc/img.png)
+![img.png](doc/2.png)
+![img.png](doc/3.png)
