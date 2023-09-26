@@ -29,11 +29,11 @@ const Home = () => {
             icon: <UserOutlined/>,
             label: '证件照制作',
         },
-        // {
-        //     key: 'matting',
-        //     icon: <VideoCameraOutlined/>,
-        //     label: '人像抠图',
-        // },
+        {
+            key: 'matting',
+            icon: <VideoCameraOutlined/>,
+            label: '人像抠图',
+        },
         {
             key: 'more',
             icon: <MoreOutlined/>,
@@ -60,7 +60,7 @@ const Home = () => {
             <Layout>
                 <Header style={{
                     padding: 0,
-                    background: colorBgContainer,
+                    background: '#F5F7FA',
                     height: 34,
                     display: 'flex',
                     alignItem: 'center'
@@ -77,7 +77,7 @@ const Home = () => {
                         margin: '5px 5px',
                         padding: 24,
                         minHeight: 280,
-                        background: colorBgContainer,
+                        background: '#F5F7FA',
                         overflow: 'auto',
                     }}
                 >
