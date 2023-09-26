@@ -22,6 +22,10 @@ const Home = () => {
         if (location.pathname === "/") {
             router('/dash')
         }
+        // 禁用邮件
+        document.oncontextmenu = function (e) {
+            return false;
+        }
     }, [])
     const menus = [
         {
