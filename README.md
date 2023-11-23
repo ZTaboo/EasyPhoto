@@ -12,5 +12,4 @@
 ![img.png](doc/1.png)
 ![img.png](doc/4.jpg)
 ![img.png](doc/img.png)
-![img.png](doc/2.png)
 ![img.png](doc/3.png)

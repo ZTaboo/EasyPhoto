@@ -49,6 +49,18 @@
         "width": 1200,
         "height": 660,
         "minWidth": 1200,
+        "minHeight": 660,
+        "center": true,
+        "visible": false
+      },
+      {
+        "decorations": false,
+        "url": "splashscreen.html",
+        "label": "splashscreen",
+        "width": 1200,
+        "center": true,
+        "height": 660,
+        "minWidth": 1200,
         "minHeight": 660
       }
     ]
